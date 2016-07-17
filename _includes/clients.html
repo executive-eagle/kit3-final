@@ -1,0 +1,68 @@
+<section class="section-clients">
+
+	<h3 id="clients">Clients</h3>
+	
+<!-- These are the controls for the carousel -->
+<div class="client-controls">
+	
+	<div class="client-control-next">{% include icons/icon-control-next.html %}</div>
+	<div class="client-control-prev">{% include icons/icon-control-prev.html %}</div>
+	
+</div>
+	
+	<!-- This for-loop will be used for the mobile version of the client logos -->
+	<!-- we are putting the client logos above the client-face and clients-belt so it can be more associated with the clients name -->
+	<!-- instead of going up and down between the client-face and the logo on the bottom -->
+	
+	<div class="clients-mobile-nav">
+	{% for client in site.data.settings.clients %}
+		<!-- there should be four spans that are made with this for-loop because there are already four clients -->
+		<span></span>
+	{% endfor %}
+	</div>
+	
+	<!-- This is where we have a carousel -->
+	<div class="clients-belt">
+		
+		<!-- the double mustaches '{{}}'are used for because in liquid (the templating tags for jekyll) -->
+		<!-- uses it to insert content or a placeholder-->
+		<!-- any logic command liek a for-loop, include, or each, you use the {} with the % -->
+		<!-- for icons/images or symbols that are svg>html files we still need the %% in the mustache brackets{} -->
+		{% for client in site.data.settings.clients %}
+		
+		<!-- These are the sections that move around -->
+		<!-- Usually name things "unit" because they are for repeating items (like projects in a portfolio of a styling attribute like a <span>) -->
+		<div class="client-unit">
+			
+			<!-- Client photo -->
+			<div class="client-face">
+				<img src="assets/img/clients/{{ client.avatar }}" alt="client-face">
+				<!-- client name -->
+				<strong class="client-name">{{ client.name }}</strong>
+				<!-- client title/position -->
+				<em class="client-title">{{ client.title }}</em>
+			</div>
+			
+			<!-- Client review/what they say -->
+			<div class="client-content">
+				<!-- this is the quote-mark -->
+				<div class="client-quote-mark">{% include icons/icon-quote-mark.html %}</div>
+				{{ client.quote }}
+				
+			</div>
+		
+		</div>
+		{% endfor %}
+		
+	</div>
+	
+	<div class="clients-logos">
+		
+		{% for client in site.data.settings.clients %}
+		
+		<!-- active client is the one the user is currently viewing -->
+		<img class="client-logo" src="/assets/img/clients/{{ client.logo }}" alt="{{ client.logo }}">
+		{% endfor %}
+	</div>
+	
+</section>

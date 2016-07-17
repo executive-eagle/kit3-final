@@ -1,0 +1,70 @@
+<!-- we need a common class on this section because it is separated by a color (in this case, pink) -->
+<section class="alt-section section-work">
+
+    <!-- the id is so that the nav bar can locate the section for us -->
+    <!-- the JavaScript function will animate the motion to get to the section -->
+    <h3 id="work">Work</h3>
+
+    <!-- Like a conveyor belt, because the images will move like a conveyor belt -->
+    <div class="work-belt">
+    
+        <div class="thumb-wrap">
+        
+        <!-- this is our portfolio section where our thumbnails are shown -->
+            <div class="thumb-container">
+
+            <!-- refer to _data/settings.yml -->
+            {% for project in site.data.settings.projects %}
+			<!-- data-folder="{{project.folder}}" brings in the images/content from the files we are pulling from /assets/img/work -->
+            <div class="thumb-unit" data-folder="{{project.folder}}" style="background-image: url(/assets/img/work/{{project.folder}}/thumb.png);">
+
+                <!-- this is the box that pops up over the album artwork -->
+                <div class="thumb-overlay">
+                    <strong>{{ project.name }}</strong>
+                    <!-- this is a placeholder so we know that we're going to put something there -->
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+        </div>
+        
+        <div class="work-wrap">
+        <!-- this is used as a way to show the expanded versions of the background images/sites we have in the thumb-unit -->
+            <div class="work-container">
+            
+            <div class="work-return">{% include icons/icon-back.html %}</div>
+            <h4 class="project-title">House of Del</h4>
+			<!-- This is where we load our projects -->
+            <div class="project-load"></div>
+				
+			
+        </div>
+        </div>
+    </div> 
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

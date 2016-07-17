@@ -1,0 +1,79 @@
+// refer to the _-sections-index.sass file in the folder
+// this file imports the sass for jekyll to convert into css
+
+// the basic structure of the entire header + background image
+header
+	// refer to assets/css/2-base/placeholders.sass for background image settings
+	@extend %bg-img
+	background:
+		position: 30px 20px, 50% 50%
+		// refer to assets/css/main.sass for the path
+		image: url(/assets/img/#{ $logo-path }), url(/assets/img/#{ $bgimg-path })
+	padding-bottom: 60px
+	
+	.logo
+		+size(50px)
+		float: left
+		margin: 10px 0 0 30px
+
+	// navigation bar on the top-right    
+	nav
+		float: right
+		padding: 10px 30px 0 0
+		
+		a
+			display: inline-block
+			// gives the nav elements some margin on their left side
+			margin: 20px
+			color: rgba(255,255,255,1)
+			
+			// refer to assets/css/2-base/placeholders to edit
+			@extend %small-bold
+			// This '&' symbol refers to all of the selectors that came before
+			
+			&:hover
+				color: rgba(255,0,0,0.4)
+
+	// the artist name
+	h1
+		text-align: center
+		font:
+			family: Open Sans
+			size: 72px
+			weight: 700   
+		color: rgba(255,255,255,1)    
+		text-transform: uppercase
+		letter-spacing: 0.02em
+		margin-bottom: 20px
+		// we need to clear the navigation bar
+		clear: both
+		padding-top: 110px
+
+		span
+			display: inline-block
+			padding: 0.2em 0.4em
+			border: white solid 10px
+
+	// our description under the artist name
+	.kicker
+		text-align: center
+		// refer to assets/css/2-base/placeholders to edit
+		@extend %small-bold
+		letter-spacing: 0.05em
+		color: rgba(255,255,255,1)
+		line-height: 1
+
+
+@media (max-width: 640px)
+	header
+		background:
+			position: 50% 20px, 50% 50%
+
+		nav
+			float: none
+			text-align: center
+			margin: none
+			padding: 80px 0 10px 0
+
+		h1
+			padding-top: 0px

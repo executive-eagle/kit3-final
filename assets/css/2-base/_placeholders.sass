@@ -1,0 +1,26 @@
+%small-bold
+	font:
+		family: Open Sans
+		size: 14px
+		weight: 700
+	text-transform: uppercase
+    
+%skill-active-color
+	background-color: #ccc
+
+    
+// this is for our header/footer cover photo
+//refer to _header.sass and _footer.sass 
+%bg-img
+	// the order that they appear: the first image is closer/on top of the images that appear after it.
+	// this applies to the declarations that we assign to the images.
+	// assign them in the same order they appear.
+	background:
+		repeat: no-repeat, no-repeat
+		// the '50px 50px' is for the logo
+		// the 'cover' is for the background image
+		// it is a responsive attribute that will readjust the size of the image when the browser's size is changed. Pretty nifty tool.
+		size: 50px 50px, cover
+		position: 30px 50px, 50% 50%
+		// this is how we layer images on top of one another
+		blend-mode: overlay, normal

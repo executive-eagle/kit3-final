@@ -1,0 +1,45 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico?" type="image/x-con"/>  
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+	<!-- you can change the name of the site in the _data/settings.yml -->
+	<title>{{ site.data.settings.title }}</title>
+</head>
+<body>
+
+	
+<!-- REFER TO THE _INCLUDES FOLDER FOR THE HTML -->
+<!-- REFER TO assets/css/sections FOR THE SASS -->
+<!-- This is where we keep our header -->
+{% include header.html %}
+    
+<!-- This is our about me section -->
+{% include about.html %}
+
+<!-- This is our work section -->
+{% include work.html %}
+
+<!-- This is where the testimonials are for the artist -->
+{% include clients.html %}
+	
+<!-- This is where our contact section will be -->
+{% include contact.html %}
+	
+<!-- This section is for our email form -->
+{% include form.html %}
+	
+<!-- this is where we keep our footer -->
+{% include footer.html %}
+    
+<script src="/assets/js/jquery-2.1.4.min.js"></script>
+<script src="/assets/js/functions.js" type="text/javascript"></script>
+<!-- REMEBER TO ADD ANALYTICS -->
+</body>
+</html>

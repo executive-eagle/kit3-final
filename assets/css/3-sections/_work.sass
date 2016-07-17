@@ -1,0 +1,163 @@
+.section-work
+	// with this we won't get a weird, sideways scrolling in the browser to see the "unused" background.
+	// the part that isn't seen in the browser will be hidden and users will not be able to scroll to the right
+	overflow-x: hidden
+
+.work-belt
+	// this section will fall out/overflow onto the right side of the browser. 
+	// we will not be able to see the right-half of the background
+	width: 200%
+	// relative to its current position
+	position: relative
+	// the work container is in the center of the page, so the thumbnail boxes/container are now off-screen to the left
+	left: 0%
+	// this allows the thumbnails to slide over to the artist documents (full version of the projects)
+	+transition(all 800ms)
+	
+.thumb-wrap, .work-wrap
+	// the width has to be 50% because 50% of 200% is 100% of the document
+	// it places the work section back to the center of the browser
+	width: 50%
+	float: left
+
+.alt-section
+	background: $bg-color
+
+.thumb-container
+	max-width: 960px
+	margin: 0px auto
+	padding-bottom: 200px
+	// bourbon mix-in that allows the thumb-units to dwell in their own space rather than layer over the surrounding elements
+	+clearfix
+
+	.thumb-unit
+		// because we have each unit labled with an anchor tag (link)
+		// we need to forcibly change that anchor 
+		display: block
+		// this width divided the size of the thumbnails into 4 parts
+		// if we have 8 thumbnails we will have two rows and 4 columns
+		width: 25%
+		//background: #666
+		// this positions them horizontally 
+		float: left
+		position: relative
+
+		// this allows us to create the height of the images, based on the width of the browser
+		// it is now more responsive
+		// this is 16% of the width of the unit
+		padding-top: 16%
+		// we do not want the overlay to show. so we keep it hidden.
+		overflow: hidden
+		background:
+			//image: url(/assets/img/work/proj-1/thumb.png)
+			position: center center
+			repeat: no-repeat
+			// it is a responsive attribute that will readjust the size of the image when the browser's size is changed. Pretty nifty tool.
+			size: cover
+        
+		@media screen and (max-width: 750px)
+			// becomes 50% of the actual photo when the browser size is 750px
+			width: 50%
+			padding-top: 26%
+		
+		.thumb-overlay
+			+position(absolute)
+			+align-items(center)
+			+justify-content(space-around)
+			+display(flex)
+
+			// this adds transparency to the thumb-overlay
+			background: fade-out(#F67E7E, 0.1)
+			text-align: center
+			//+transition
+			// fix later
+			// meant to hold the beginning/animation result of the overlay animation
+			@extend %animationstart_#{$animation}
+	
+			
+			strong
+				// when you tell it to be block, you can assign the padding to it
+				display: block
+				// 20px all around
+				padding: 37px 20px
+				color: white
+				font:
+					family: Open Sans
+					size: 24px
+					weight: 300
+				text-transform: uppercase
+				line-height: 1.2
+            
+        
+		// '&' called an ampersand(?) refers to the thumb-unit
+		// '&:hover' hover over the parent
+		// this line is telling us that when the thumb-unit gets hovered
+		// take the child (which is '.thumb-overlay')
+		&:hover 
+			z-index: 2
+
+			.thumb-overlay
+				// fix later
+				// meant to hold the end result of the overlay animation
+				@extend %#{$animation}
+
+
+// There are a lot of children of the thumb-container, so if we put a choma and a new selector
+// it means we now have a new parent selector and we are doubling up on all of these unnecassary selectors
+// tldr: less code is written if we choose to start anew down here rather than add it to thumb-container
+.work-container
+	// this will be 960 in the center
+	// refer to work.html for the same width and height
+	max-width: 600px
+	margin: 0px auto
+	position: relative
+	display: none
+
+
+	h4
+		color: $accent-color
+		font-family: Open Sans
+		font-size: 24px
+		font-weight: 300
+		text-transform: uppercase
+		line-height: 1.2
+		margin: -45px 0 20px
+
+
+	img
+		// this is to make sure all of the newly added images do not go over 960px wide (100% width of its parent, work-container)
+		max-width: 100%
+		margin-bottom: 20px
+
+	.work-return
+		+size(40px)
+		// we can make it the style of a link with this
+		cursor: pointer
+		+position(relative, -11px null null -60px)
+
+
+		// How the color of the icon-back looks without the cursor
+		circle
+			stroke: white
+		path
+			stroke: white
+
+		&:hover
+			// How the color of the icon-back looks with the cursor hovering over it
+			circle
+				stroke: rgba(255,0,0,0.3)
+			path
+				stroke: rgba(255,0,0,0.3)
+	
+	
+	
+// this will make sure the icon-back is not cut off in mobile devices
+@media (max-width: 740px)
+	.work-container
+	
+		.work-return
+			left: 0px
+
+		h4
+			margin-left: 60px 
+            

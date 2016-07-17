@@ -1,0 +1,148 @@
+// our section with the artist face and skill icons    
+.face-lockup
+	max-width: 780px
+	// we turn this section into a flexbox
+	// it will help us arrange the elements
+	+display(flex)
+	margin: 0 auto
+	// this aligns the icons in the center of the block (horizontally)
+	+align-items(center)
+	+justify-content(space-between)
+	padding: 0 0 60px
+
+
+	// we are using an inline sass variable
+	// we have to use the #{} to make it inline 
+	// refer to _data/portfolio.yml to change it
+	.face-img
+		border-radius: 50%
+		background-size: cover
+		background-position: center
+		background-image: url(/assets/img/#{ $avatar-path })
+		+size(200px)
+		// bourbon mix-in
+		+order(3)
+      
+	// this selector allows us to add attributes to any class with the characters "icon-" in them
+	[class^="icon-"]
+		// makes all of them the size 100px
+		+size(100px)
+		background: $bg-color
+		// this is how we round out an image
+		border-radius: 50% 
+
+		// this determines the color of our icons
+		path
+			fill: $accent-color
+
+		// this will determine the order of each icon
+		// bourbon mix-in
+		&.icon-note
+			+order(1)
+		&.icon-guitar
+			+order(2)
+		&.icon-mic
+			+order(4)
+		&.icon-video
+			+order(5)
+
+// media query that collapses/reorganizes the artist image and icons
+@media screen and (max-width: 650px)
+	.face-lockup
+		display: block
+		text-align: center
+
+		div
+			display: inline-block
+
+		.face-img
+			display: block
+			background:
+				position: center center
+				repeat: no-repeat
+			margin: 0 auto 30px
+
+	[class^="icon-"]
+		margin: 10px 9%
+
+
+.blurb
+	font-family: Open Sans
+	color: $text-color
+	max-width: 620px
+	padding: 0 20px
+	margin: 50px auto
+	font-size: 24px
+	text-align: justify
+	font-weight: 300
+
+	a
+		color: rgba(255,0,0,0.4)
+
+		// This '&' symbol refers to all of the selectors that came before
+		&:hover
+			color: rgba(255,0,0,0.6)
+
+
+.skill-lockup
+	max-width: 620px
+	margin: 100px auto
+	text-align: left
+	color: #999
+	+clearfix
+
+	.skill-unit
+		width: 310px
+		float: left
+
+	.skill-icons
+		font-size: 0
+		margin: 0 0 30px
+
+		// this is where we have our little circles used for our skills
+		span
+			display: inline-block
+			+size(14px)
+			background-color: $accent-color
+			margin: 3px
+			border-radius: 50%
+
+			// this is where we add the white circles in the middle of the pink
+			// this makes them appear like rings
+			&:after
+				content: ''
+				display: block
+				+size(10px)
+				background: #fff
+				border-radius: 50%
+				margin: 2px
+
+
+		// This is a for-loop that creates a new selector every time we run it
+		// it starts at 1 and goes through 10
+		// every time it goes through a loop, the placeholder of $i will be replaced with a number of 1 through 10 depending on how many times it has gone through
+		@for $i from 1 through 10
+			// so the first time it will output 1 in '.skill-#{$i}'
+			// .skill-1 span:nth-child(n+1) will be $bg-color
+			&.skill-#{$i} span:nth-child(n+#{$i + 1})
+				@extend %skill-color
+
+
+@media screen and (max-width: 650px)
+	.skill-lockup
+		width: 270px
+
+// refer to line 128        
+%skill-color
+	background: $bg-color
+
+
+
+
+
+
+
+
+
+
+

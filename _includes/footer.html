@@ -1,0 +1,25 @@
+<!-- refer to the _data/portfolio.yml file to change the background image and logo -->
+<footer>
+
+<div class="lockup">
+    <!-- change the adlogo extension back to html -->
+    
+    <div class="content-wrap">
+    
+        <nav>
+            <!-- for-loop -->
+            <!-- for each item we define in _data/settings.yml (in our 'menu:' list) it will output an element in this nav bar -->
+            <!-- It will fill it in with the name and the url of the element (About, Contact, etc.) -->
+            {% for item in site.data.settings.menu %}
+            <a href="{{ item.url }}">{{ item.name }}</a>
+            {% endfor %}
+        </nav>
+        
+        <p class="copyright">All content copyright 2016</p>
+    </div>
+    
+
+    
+</div>
+    
+</footer>

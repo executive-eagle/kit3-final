@@ -1,0 +1,156 @@
+# Portfolio Settings
+title: Avel Delano
+description: Musician // Artist // Visionary
+email: saatdeniz@gmail.com
+
+#---------------------------------
+# HEADER SECTION
+
+# Our logo for the header/footer
+logo: 'adlogo.svg'
+# Our background image for the header/footer
+bg-img: 'adcover.png'
+
+# MENU ITEM LIST
+# List that manages the menu
+# This is our nav bar
+
+menu:
+- {name: About, url: '#about'}
+- {name: Work, url: '#work'}
+- {name: Clients, url: '#clients'}
+- {name: Contact, url: '#contact'}
+
+
+
+
+
+
+
+#---------------------------------
+# ABOUT SECTION
+
+
+# Artist Photo
+avatar: 'adface.png'
+
+
+# Artist Bio
+# refer to about.html
+blurb: | 
+  **Avel Delano (uh-vel de-lawn-o) is on this planet to create music.** His soul consists of gastric Jupiter rhythms that will make your heart beat on a higher wavelength. His expertise reaches all genres of music and sounds that the universe harbors. 
+  
+  Need a hook or catchy-ass melody? Avel's acoustic palette will provide you with an epic experience.
+  
+  Check out his latest [expedition](https://soundcloud.com/avel-avel-avel).
+
+
+# Skill List
+# List of the artist's skills and values
+skills:
+- {name: Communication, value: '8'}
+- {name: Learning, value: '10'}
+- {name: Planning, value: '7'}
+- {name: Performance, value: '8'}
+- {name: Organization, value: '8'}
+- {name: Teaching, value: '7'}
+- {name: Singing, value: '9'}
+- {name: Writing, value: '8'}
+
+
+
+
+
+
+
+#---------------------------------
+# WORK SECTION
+
+# refer to assets/css/1-tools/animations to choose which animation you wish to use for the thumbnail overlay in the work section
+animation: "bounceOut"
+
+projects:
+- {name: House of Del, folder: 'proj-1'}
+- {name: Torn, folder: 'proj-2'}
+- {name: I Know, folder: 'proj-3'}
+- {name: Falls, folder: 'proj-4'}
+- {name: Lux, folder: 'proj-5'}
+- {name: 55sols, folder: 'proj-6'}
+- {name: W.W. III, folder: 'proj-7'}
+- {name: Strawberry Vanilla, folder: 'proj-8'}
+
+
+
+
+
+
+
+
+#---------------------------------
+# CLIENTS SECTION
+
+# avatar refers to the client image
+
+clients:
+- {avatar: 'ray.jpg', name: 'Raymond C.', title: 'Director of M0nee-cache Record$', quote: '<p><strong>$MONEY $MONEY $MONEY $MONEY $MONEY $MONEY $MONEY $MONEY $MONEY $MONEY$$$$%$%$$$^...</strong>this guy will make you monies and chill vibes. Get at me! WHAT?! NONE OF THAT. NONE OF -- Oh yeah, he sings well too.</p>', logo: 'ray-logo.png' }
+- {avatar: 'jb.jpg', name: 'Ferris', title: 'Musician // Artist', quote: 'asksadl;kfjsad flasdjfjsckf s; fsad cg g fs g fs  vsa  sa g asf  asf g fs', logo: 'jb-logo.png'}
+- {avatar: 'lynda.jpg', name: 'Lynda C.', title: 'Director of Awesomeness', quote: 's g sfgs g safg sf g f g ds f sd f s g f g fg sa g sf f sdf da sf', logo: 'lynda-logo.png' }
+- {avatar: 'trish.jpg', name: 'Trish Hautea', title: 'CEO and Founder of Trish', quote: 's fg f gs df  s gf gsd sfsadjhslkjew  w  w thg w  tr   g fdg  fg s fg fs g', logo: 'trish-logo.png' }
+
+
+
+
+
+
+
+
+#---------------------------------
+# SEO SECTION
+# NOTE: Providing SEO information will make this website more searchable on the internet.
+
+seo:
+  description: 'Provide a description for your website to make it visible to search engines.'
+  rel-author: 'http://www.denizeditz.com/'
+  rel-publisher: 'http://www.denizeditz.com/'
+
+
+#---------------------------------
+# CONTACT SECTION
+
+# refer to assets/css/5-sections/contact 
+# you can choose: 'twitter' / 'facebook' / 'pinterest' / 'google-plus' / 'linkedin' / 'youtube' / 'instagram' / 'dribble' / 'behance' / 'soundcloud' / 'vine'
+
+social: 
+- {icon: 'soundcloud', link: 'https://soundcloud.com/avel-avel-avel'}
+- {icon: 'instagram', link: 'https://www.instagram.com/avelvision/'}
+- {icon: 'youtube', link: 'https://www.youtube.com/watch?v=e5mMH_iPRHE'}
+- {icon: 'linkedin', link: 'https://www.linkedin.com/in/adolfo-cortijo-8a2a9091?authType=NAME_SEARCH&authToken=-MUi&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A328148474%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1468438190465%2Ctas%3Aadolfo%20cortij'}
+- {icon: 'facebook', link: 'https://www.facebook.com/avel.avel.avel.avel?fref=ts'}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+---
+---
+
+@import '1-tools/-tools-dir'
+// Transition the image paths from the settings file to usable SASS variables
+$animation: {{ site.data.settings.animation }}	
+	
+// refer to _data/settings.yml to change the logo and background image
+$logo-path: '{{ site.data.settings.logo }}'
+$bgimg-path: '{{ site.data.settings.bg-img }}'
+
+
+/* ABOUT PATH CONFIGURATIONS */
+
+// refer to _data/settings.yml to change the artist photo
+$avatar-path: '{{ site.data.settings.avatar }}'
+
+
+
+/* IMPORTS */
+
+@import '2-base/-base-dir'
+@import '3-sections/-sections-dir'
+
+// this is where we import the other styling files in our css folder
+
+

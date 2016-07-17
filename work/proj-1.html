@@ -1,0 +1,64 @@
+<!-- Here is our content that will show up in the project section after selecting one of the thumbnails -->
+<!-- refer to _includes/work.html where work-1.html is included -->
+<!-- the 'alt' is for us to call in the sass -->
+<img src="/assets/img/work/proj-1/house_of_del.png" alt="House of Del">
+
+<p>This is an intimate description of the project.</p>
+
+<!-- Here are the tracks -->
+
+
+
+<!--
+	<iframe alt="song-1" width="100%" height="120" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/254312579&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+	<iframe alt="song-2" width="100%" height="120" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/253170874&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+-->
+
+<!-- Here is the music video(s) -->
+
+	<!-- <iframe alt="video-1" width="560" height="315" src="https://www.youtube.com/embed/e5mMH_iPRHE" frameborder="0" allowfullscreen></iframe> -->
+
+
+
+<!-- custom video player -->
+
+<div class="youtube-container">
+	<div class="youtube-player" data-id="e5mMH_iPRHE"></div>
+</div>
+
+<!-- our JavaScript -->
+<!-- it will scan our pages for embedded YouTube videos. -->
+<script>
+(function() {
+    var v = document.getElementsByClassName("youtube-player");
+    for (var n = 0; n < v.length; n++) {
+        var p = document.createElement("div");
+        p.innerHTML = labnolThumb(v[n].dataset.id);
+        p.onclick = labnolIframe;
+        v[n].appendChild(p);
+    }
+})();
+ 
+function labnolThumb(id) {
+    return '<img class="youtube-thumb" src="//i.ytimg.com/vi/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
+}
+ 
+function labnolIframe() {
+    var iframe = document.createElement("iframe");
+    iframe.setAttribute("src", "//www.youtube.com/embed/" + this.parentNode.dataset.id + "?autoplay=1&autohide=2&border=0&wmode=opaque&enablejsapi=1&controls=0&showinfo=0");
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("id", "youtube-iframe");
+    this.parentNode.replaceChild(iframe, this);
+}
+</script>
+
+<!-- styling for the YouTube player -->
+
+<style>
+.youtube-container { display: block; margin: 20px auto; width: 100%; max-width: 600px; }
+.youtube-player { display: block; width: 100%; /* assuming that the video has a 16:9 ratio */ padding-bottom: 56.25%; overflow: hidden; position: relative; width: 100%; height: 100%; cursor: hand; cursor: pointer; display: block; }
+img.youtube-thumb { bottom: 0; display: block; left: 0; margin: auto; max-width: 100%; width: 100%; position: absolute; right: 0; top: 0; height: auto }
+div.play-button { height: 72px; width: 72px; left: 50%; top: 50%; margin-left: -36px; margin-top: -36px; position: absolute; background: url("http://i.imgur.com/TxzC70f.png") no-repeat; }
+#youtube-iframe { width: 100%; height: 100%; position: absolute; top: 0; left: 0; }
+</style>
+

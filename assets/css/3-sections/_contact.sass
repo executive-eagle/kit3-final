@@ -1,0 +1,80 @@
+.section-contact
+	// this will set all the paramaters below to be centered
+	text-align: center
+
+.social-links
+	max-width: 700px
+	margin: 0px auto 50px
+	// this will space everything evenly and lined up nicely, no matter how many more items you put in there
+	+display(flex)
+	+justify-content(space-around)
+	// makes the logos responsive when the browser is smaller
+	+flex-wrap(wrap)
+	
+	a
+		display: block
+		background: $accent-color
+		+size(50px)
+		line-height: 50px
+		color: white
+		// makes the sections into circles instead of squares
+		border-radius: 50%
+		margin: 20px
+		font-size: 28px
+		// needed for the hover animation below
+		+transition()
+
+		&:hover
+			// increases the scale of the social network icons when the cursor hovers over them
+			+transform(scale(1.2))
+		
+.bar
+	width: 250px
+	height: 0px
+	border-top: 4px solid $accent-color
+	margin: 0px auto 50px
+
+
+.biglink
+	// inline-block will make sure that the whole section (beyond the email) will highlight the link
+	display: inline-block
+	font:
+		family: Open Sans
+		size: 72px
+		weight: 300
+	line-height: 1
+	margin-bottom: 100px
+	
+	&:hover
+		color: $accent-light-color
+
+@media (max-width: 725px)
+	.biglink
+		display: inline-block
+		font:
+			family: Open Sans
+			size: 48px
+			weight: 300
+		line-height: 1
+		margin-bottom: 100px
+
+@media (max-width: 475px)
+	.biglink
+		display: inline-block
+		font:
+			family: Open Sans
+			size: 24px
+			weight: 300
+		line-height: 1
+		margin-bottom: 100px
+
+
+
+
+
+
+
+
+
+
+

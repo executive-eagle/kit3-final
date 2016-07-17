@@ -1,0 +1,12 @@
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+port: 3000
+
+# This is so that we can use the @import statements
+# What do we need for the @extend statements?
+sass:
+  sass_dir: assets/css
+  style: :compressed
+  

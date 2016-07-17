@@ -1,0 +1,51 @@
+footer
+	// refer to assets/css/2-base/placeholders.sass
+	@extend %bg-img
+	// refer to assets/css/main.sass for the path
+	background-image: url(/assets/img/#{ $logo-path }), url(/assets/img/#{ $bgimg-path })
+
+	.lockup
+		font-family: Open Sans
+		padding: 50px 30px
+		// fixes the mess that float makes
+		+clearfix
+
+
+		.content-wrap
+			float: left
+			margin-left: 80px
+
+			a
+				// refer to assets/css/2-base/placeholders to edit
+				@extend %small-bold
+				color: rgba(255,255,255,1)
+				display: inline-block
+				margin-right: 30px
+
+				// This '&' symbol refers to all of the selectors that came before
+				&:hover
+					color: rgba(255,0,0,0.4)
+
+		.copyright
+			float: left
+			margin: 0
+			text-transform: uppercase
+			font-size: 12px
+			color: rgba(255,255,255,1)
+
+
+@media (max-width: 450px)
+	footer
+		// this refers to the position of the logo
+		background:
+			position: 50% 20px, 50% 50%
+
+		.lockup
+			padding: 50px 30px
+
+			.content-wrap
+				float: none
+				margin-left: 0
+				
+				nav
+					padding: 25px 0 10px 0

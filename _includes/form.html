@@ -1,0 +1,35 @@
+<section>
+
+	<h3>Let's work together</h3>
+	
+<!-- With formspree.io, they will receive a user email (HTML form) intended for the artist -->
+<!-- formspree then processes the form that is sent and then send it off to the intended email provided below in the curly brackets -->
+<!-- in order to change the email, you must refer to data/settings.yml where the email is assigned -->
+<!-- whatever email address you include below through the settings.yml doc, the user's email will be sent to formspree and then shot off to the provided email address -->
+<form action="https://formspree.io/{{ site.data.settings.email }}" method="POST">
+	
+	<div class="contact-info-group">
+		<!-- We have to set all of these guys (below) up with a label so we can call them in the sass file -->
+		<label><span>Name</span>
+		<!-- we have a text input where you can also include your name -->
+		<input type="text" name="name"></label>
+	
+		<!-- the _replyto input is if you get an email from someone and you reply to it with your email address this will handle that replyto -->
+		<!-- it is going to send it back to the person who filled out the form on the website -->
+		<label><span>Email</span>
+		<input type="email" name="_replyto"></label>
+	
+	</div>
+		
+	<label><span>Message</span>
+	<!-- where the user writes their message -->
+	<textarea name="message"></textarea></label>
+	
+	<!-- we have the submit button in a wrap so we can align it to the right! -->
+	<div class="submit-wrap">
+		<!-- this is a submit button -->
+		<input type="submit" value="Send">
+	</div>
+</form>
+
+</section>

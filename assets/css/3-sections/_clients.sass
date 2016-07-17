@@ -1,0 +1,221 @@
+.section-clients
+	position: relative
+
+.clients-belt
+	// we want it to span the whole width of the browser, similar to what we did in the work section
+	// we will be sliding things in the same manner
+	width: 100%
+	// this is so that the children of it will be positioned relative to it.
+	position: relative
+
+	.client-unit
+		max-width: 750px
+		// this will center the client-unit
+		margin: 50px auto
+		// this stacks all of the clients on top of one another
+		position: relative
+		z-index: 1
+		display: none
+		
+		// when a client is 'active-client'
+		&.active-client
+			// this displays the client the user selects.
+			+display(flex)
+			// this will animate the selection
+			// It basically deletes the clients that are not shown
+			@extend %#{$animation}
+
+		.client-face
+			min-width: 300px
+			text-align: center
+			
+			img
+				max-width: 128px
+				border-radius: 50%
+
+			.client-name
+				font-family: Open Sans
+				display: block
+				text-transform: uppercase
+				font-weight: 400
+				letter-spacing: 1px
+	
+			.client-title
+				font-family: Open Sans
+				font-style: normal
+				font-size: 12px
+				color: $text-color
+				
+		.client-content
+			//max-width: 100px
+			font:
+				family: Open Sans
+				size: 18px
+				weight: 300
+			line-height: 36px
+			margin-top: -10px
+			color: $text-color
+			position: relative
+
+// **Note that you need to resize and change the logos
+// Client Logos
+.clients-logos
+	position: relative
+	max-width: 750px
+	margin: 50px auto 100px
+	+display(flex)
+	// this will allow for the logos to be responsive when the browser changes sizes.
+	// the edge of the browser will not crush/touch the logos on the edge
+	// the space around the logos will be equidistant
+	// and will collapse to adjust to the screen size
+	// flex-end pushes all the items to the bottom of one line
+	// a single baseline
+	+align-items(flex-end)
+	+justify-content(space-around)
+	
+	
+	.client-logo
+		cursor: pointer
+		margin: 0px 10px
+		padding-bottom: 20px
+		// this is here so the logos don't jump up when they are selected
+		border-bottom: 4px solid transparent
+		opacity: 0.5
+
+	
+		// the '&' ampersand refers to everything that came before it.
+		// if it is a client-logo inside clients-logos then we are going to say
+		&.active-client
+			opacity: 1
+			border-bottom: 4px solid $accent-color
+	
+.client-quote-mark
+	+position(absolute, -26px null null -35px)
+	+size(60px)
+	// this places the quote behind the text
+	z-index: -1
+	opacity: 0.3
+
+	path
+		fill: $accent-color
+
+
+// Controls
+.client-controls
+	// we want everything to collapse on top of these things
+	+position(absolute, 0px 0px 0px 0px)
+	z-index: 2
+
+	// refers to both of the client-controls
+	> div
+		+size(40px)
+		margin-top: -20px 
+		cursor: pointer
+		
+		path
+			stroke: $accent-color
+
+	.client-control-next
+		+position(absolute, 50% 10px null null)
+	
+	.client-control-prev
+		+position(absolute, 50% null null 10px)
+	
+
+// Clients Mobile Nav
+.clients-mobile-nav
+	text-align: center
+	display: none
+	z-index: 3
+	display: none
+	
+	span
+		display: inline-block
+		+size(16px)
+		border-radius: 50%
+		border: solid 2px $bg-color
+		margin: 0px 10px
+		cursor: pointer
+
+		// & will affect whichever client is selected above
+		&.active-client
+			border-color: $accent-color
+	
+
+// this is used as a way to make the section responsive
+@media (max-width: 850px)
+	// this is for the mobile screen
+	// once the browser is smaller than 800 (or whatever the number is set to)
+	// the control arrows will disappear
+	.client-logos
+		+flex-wrap(wrap)
+	
+	.clients-belt
+		overflow-x: hidden
+		
+		.client-unit.active-client
+			// stacks the elements on top of one another
+			display: block
+			// this turns off the 'position: absolute' that is assigned above
+			position: relative
+			// these two down here turn off '+display(flex)'
+			margin-left: auto
+			left: auto
+			
+			.client-face
+				// gives the client photo and title some separation between itself and the quote
+				margin-bottom: 20px
+			
+			.client-content
+				padding: 0px 30px
+				max-width: 400px
+				margin: 0px auto
+	
+			.client-quote-mark
+				left: 5px
+	
+	.clients-logos
+		// think about how it would work for a mobile device
+		// you wouldn't want to scroll up and down when you are switching between client reviews
+		// we will have the logos disappear when it is used on a mobile device
+		display: none
+
+	.clients-mobile-nav
+		display: block
+	
+@media (max-width: 849px)
+	.client-controls
+		display: none
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
