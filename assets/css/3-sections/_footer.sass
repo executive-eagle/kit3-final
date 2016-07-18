@@ -2,7 +2,8 @@ footer
 	// refer to assets/css/2-base/placeholders.sass
 	@extend %bg-img
 	// refer to assets/css/main.sass for the path
-	background-image: url(/assets/img/#{ $logo-path }), url(/assets/img/#{ $bgimg-path })
+	// the '..' help with the root call of the image
+	background-image: url(../img/#{ $logo-path }), url(../img/#{ $bgimg-path })
 
 	.lockup
 		font-family: Open Sans
@@ -46,6 +47,6 @@ footer
 			.content-wrap
 				float: none
 				margin-left: 0
-				
+
 				nav
 					padding: 25px 0 10px 0
