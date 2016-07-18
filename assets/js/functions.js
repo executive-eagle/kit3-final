@@ -4,12 +4,12 @@ $(function() {
     workBelt();
 	workLoad();
 	clientStuff();
-	
+
 	$("header h1").fitText(1, { minFontSize: '20px', maxFontSize: '72px' });
 	//$(".biglink").fitText(1, { minFontSize: '20px', maxFontSize: '72px' });
-	
+
 	$('textarea').autosize();
-	
+
 });
 
 
@@ -18,9 +18,9 @@ $(function() {
 // this is how we get from the nav bar to different sections on the site like "About", "Work", "Contact", etc..
 function smoothScroll (duration) {
     $('a[href^="#"]').on('click', function(event) {
-        
+
         var target = $( $(this).attr('href') );
-        
+
         if(target.length){
             event.preventDefault();
             $('html, body').animate({
@@ -34,13 +34,13 @@ function smoothScroll (duration) {
 // Used in the work section
 // this is how we move back and forth between the project thumbnails and the projects themselves
 function workBelt() {
-    
+
     $('.thumb-unit').click(function() {
         $('.work-belt').css('left','-100%');
 		// this will show the bottom portion when the user clicks on the thumbnails to get to the documents of the projects
 		$('.work-container').show();
     });
-    
+
     $('.work-return').click(function() {
         $('.work-belt').css('left','0%');
 		// this will hide the bottom portion below the thumbnail section
@@ -48,7 +48,7 @@ function workBelt() {
 		// refer to the +transition in _work.sass to change the speed
 		$('.work-container').hide(800);
     });
-    
+
 }
 
 
@@ -56,7 +56,7 @@ function workBelt() {
 // Used for the project section in the work section
 // this will help us dynamically load the projects
 function workLoad(){
-	
+
 	// we want to tell the browser that we want to cache the content
 	// cache - a temporary storage space or memory that allows fast access to data
 	// if we were bringing in really random things like blog-posts or products that are only going to be used once
@@ -65,36 +65,36 @@ function workLoad(){
 	// they're going to be the same the majority of the time
 	// it's okay to cahche it. This will make it load faster when you go back and forth between the project and the thumbnail
 	$.ajaxSetup({ cache: true });
-	
-	
+
+
 	$('.thumb-unit').click(function(){
-		
+
 		// this is the loading icon/spinning beach ball
 		// you can get them here http://projects.lukehaas.me/css-loaders/
 		// the html below is all we need in the function but we also need the css to animate the spinner
 		// copy the css and paste it in assets/css/1-tools/spinner.scss
-		
+
 		// for the 'newHTML' is the document that is going to be loaded in.
 		// we point it in the direction of work-1.html so it can load the project images
-		
+
 		// here we cache our 'this()'
 		// every time you want to use and reuse the object of 'this()' we will cache it like this so we do not dip back into the pool
 		// 'this()' represents the thing (in this case, the thumbnail 'thumb-unit') you clicked.
-		
+
 		// 'newTitle = $this.find('strong').text()' finds the headline/title for the project and populates that space in the html with the correct title for the correct project
 		// it finds the text that is in the strong tag
-		
+
 		// 'newFolder' this new variable will pull out that information and print out the information in each project folder in the work folder
-		
-		// 'newHTML' we add the newFolder variable so that it can identify each project folder, rather then have us type each one out separately 
+
+		// 'newHTML' we add the newFolder variable so that it can identify each project folder, rather then have us type each one out separately
 		var $this = $(this),
 			newTitle = $this.find('strong').text(),
 			newFolder = $this.data('folder'),
 			spinner = '<div class="loader">Loading...</div>',
-			newHTML = '/work/' + newFolder + '.html';
-		
+			newHTML = 'work/' + newFolder + '.html';
+
 		$('.project-load').html(spinner).load(newHTML);
-		
+
 		// here we will be more specific in what we want the function to refer to with 'project.load'
 		// the spinner will then spin if needed
 		// then .load(newHTML) will load the projects
@@ -103,50 +103,50 @@ function workLoad(){
 		// here we declare the new title for the project
 		$('.project-title').text(newTitle);
 	});
-	
+
 }
 
 
 
 
 function clientStuff() {
-	
+
 	$('.client-unit').first().addClass('active-client');
 	$('.client-logo').first().addClass('active-client');
-	
+
 	// this is so our mobile version of the client section is able to also receive the 'active-client' attribute
 	$('.clients-mobile-nav span').first().addClass('active-client');
-	
+
 	// we then add the '.clients-mobil-nav' so that it can correspond with the '.client-logo'
 	// it will act just like the logos
 	$('.client-logo, .clients-mobile-nav span').click(function(){
 		var $this = $(this),
 			$siblings = $this.parent().children(),
 			position = $siblings.index($this);
-		
+
 		$('.client-unit').removeClass('active-client').eq(position).addClass('active-client');
 		$siblings.removeClass('active-client');
 		$this.addClass('active-client');
 	});
-	
+
 	$('.client-control-next, .client-control-prev').click(function(){
-		
+
 		var $this = $(this),
 			curActiveClient = $('.clients-belt').find('.active-client'),
 			position = $('.clients-belt').children().index(curActiveClient),
 			clientNum = $('.client-unit').length;
-		
+
 		if($this.hasClass('client-control-next')) {
-			
+
 			if(position < clientNum -1){
 				$('.active-client').removeClass('active-client').next().addClass('active-client');
 			} else {
 				$('.client-unit').removeClass('active-client').first().addClass('active-client');
 				$('.client-logo').removeClass('active-client').first().addClass('active-client');
 			}
-		
-		} else {	
-			
+
+		} else {
+
 			if (position === 0){
 				$('.client-unit').removeClass('active-client').last().addClass('active-client');
 				$('.client-logo').removeClass('active-client').last().addClass('active-client');
@@ -154,7 +154,7 @@ function clientStuff() {
 				$('.active-client').removeClass('active-client').prev().addClass('active-client');
 			}
 		}
-		
+
 	});
 }
 
@@ -162,41 +162,41 @@ function clientStuff() {
 
 
 
-// Used for the title of the page 
+// Used for the title of the page
 // title is found in _data/settings.yml
 // this program allows the for the name to shrink in size according to the size of the device
 (function( $ ){
-	
+
 	$.fn.fitText = function( kompressor, options ) {
-		
+
 		// Setup Options
 		var compressor = kompressor || 1,
 			settings = $.extend({
 				'minFontSize' : Number.NEGATIVE_INFINITY,
 				'maxFontSize' : Number.POSITIVE_INFINITY
 			}, options);
-		
+
 		return this.each(function(){
-			
-			// Store the object 
+
+			// Store the object
 			var $this = $(this);
-			
+
 			// Resizer() resizes items based on the object width divided by the compressor * 10
 			var resizer = function () {
-				
-				$this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));	
+
+				$this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
 			};
-			
+
 			// Call once to set.
 			resizer();
-			
+
 			// Call on resize. Opera debounces their resize by default.
 			$(window).on('resize.fittext orientationchange.fittext', resizer);
-			
+
 		});
-		
+
 	};
-	
+
 })( jQuery );
 
 
@@ -222,7 +222,7 @@ function clientStuff(){
 	$('.client-unit').first().addClass('active-client');
 	// this one is for the client logos
 	$('.client-logo').first().addClass('active-client');
-	
+
 	// $('.client-logo') = look for the client logos
 	// .click() = when a user clicks on the logo, the function stored in click will run
 	$('.client-logo').click(function(){
@@ -242,7 +242,7 @@ function clientStuff(){
 			// we say "look at those siblings"
 			// "and index the one that is referred to as $this in the variable above that"
 			position = $siblings.index($this);
-		
+
 		// Find everything that is a client-unit and remove the class of "active-client" from the html file
 		// above we add the class "active-class"
 		// now we are going to remove it
@@ -250,15 +250,15 @@ function clientStuff(){
 		// we find that specific number with the variable 'position' because it was stored there earlier in the program
 		// after it finds the position, it will add the class 'active-client'
 		$('.client-unit').removeClass('active-client').eq(position).addClass('active-client');
-		
+
 		// Here we have the logo selection
 		// this takes off the highlight line
 		$siblings.removeClass('active-client');
-		
+
 		// Here we put the line back onto the logo we click on
 		$this.addClass('active-client');
 	});
-	
+
 	// this part of the function will activate the arrows on the sides of the testimonials
 	$('.client-control-next').click(function(){
 		// like in the first part, we will assign some variables to stash some information to be used later
@@ -275,25 +275,25 @@ function clientStuff(){
 			// so, we need to know how many there are
 			// we count them with .length
 			clientNum = $('.client-unit').length;
-		
+
 			// if the position the user is at, is greater than the number of these client-units available (in this case 4)
 			// -1 because it is 0-index
 			// then complete the function below
 			if(position < clientNum -1){
-			
+
 			// Now that we know the position of the logos, clients and the number of logos paired with the same number of clients
 			// we're taking all the active-clients (from the logos and clients) and removing the class of active-client (redundant yes, but it's legit)
 			// we then switch over in the DOM to the next one
 			$('.active-client').removeClass('.active-client').next().addClass('.active-client');
 			} else {
-				
+
 				// if the position is not greater than, we want to jump back first
 				$('.client-unit').removeClass('.active-client').first().addClass('.active-client');
 				// same thing for the other guy, instead it is labeled as client-logo rather than unit
 				$('.client-logo').removeClass('.active-client').first().addClass('.active-client');
 			}
 	});
-	
+
 }
 
 */
@@ -318,34 +318,34 @@ function smoothScroll (duration) {
     // Once it finds an href with a '#', it will be ready with .on('click', )
     // if you click them then the function(event) will occur
     $('a[href^="#"]').on('click', function(event) {
-        
-        // first, it will store a variable called 'target' 
+
+        // first, it will store a variable called 'target'
         // this target will look at the link that you just clicked and look at its .attr (attribute) of the 'href' to then store it
-        
-        // let's say you have a link <a href="#about">about</a>, it will take the #about and then store it. So, the variables will look like #about, #contact, etc. 
+
+        // let's say you have a link <a href="#about">about</a>, it will take the #about and then store it. So, the variables will look like #about, #contact, etc.
         var target = $( $(this).attr('href') );
-        
+
         // if this target (the '#') is followed by a string, then -->
         if(target.length){
             // --> it will preventDefault()
             // essentially, preventing the browser from reloading.
             // the event is the click
             event.preventDefault();
-            
+
             // what the function will do is take the html and body and animate them
             $('html, body').animate({
-                
+
                 // the animation will start scrolling
                 // it will scroll them to the target
                 // (which is the #about, #contact, etc.)
                 // when we id the header, about or footer sections, we id them and the function identifies the #name with the id="name"
-                // when you call the target, you're talking about the id="name", which will match the same 
+                // when you call the target, you're talking about the id="name", which will match the same
                 // #name in the a=href"#name" link
                 // when you're going to the header.html
                 // the <a href="#about">About</a> needs to match the link in the section it is referring to
                 // in this case, the about.html needs an id
                 // <h3 id="about">About</h3>
-                
+
                 // when it finds the header/section you wish to go to, it will animate the body to its offset from the top
                 // so, if the section is 1000px down it will animate the whole body to scroll a 1000px down
                 scrollTop: target.offset().top
@@ -368,7 +368,7 @@ function smoothScroll (duration) {
 // Note that this is jQuery
 
 /*function workBelt(){
-    
+
     // '$' means 'jQuery, listen up'
     // we are going to say look for all of the .thumb-units
     // and then when somebody .clicks on one
@@ -377,33 +377,12 @@ function smoothScroll (duration) {
         // take .work-belt and move it left, '-100%' to the full documents from the thumbnails
         $(.work-belt).css('left', '-100%');
     });
-    
+
     // listen up jQuery, when somebody clicks the .work-return (returns you back)/the return button
     $('.work-return').click(function(){
         // take the .work-belt and put left at 0%
         $('.work-belt').css('left', '0%')
     });
-    
+
 }
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

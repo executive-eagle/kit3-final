@@ -61,6 +61,7 @@
 		{% for client in site.data.settings.clients %}
 
 		<!-- active client is the one the user is currently viewing -->
+		<!-- delete the / at the beginning of the path "assets/img..." -->
 		<img class="client-logo" src="assets/img/clients/{{ client.logo }}" alt="{{ client.logo }}">
 		{% endfor %}
 	</div>
