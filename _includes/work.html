@@ -16,7 +16,7 @@
             <!-- refer to _data/settings.yml -->
             {% for project in site.data.settings.projects %}
 			<!-- data-folder="{{project.folder}}" brings in the images/content from the files we are pulling from /assets/img/work -->
-            <div class="thumb-unit" data-folder="{{project.folder}}" style="background-image: url(assets/img/work/{{project.folder}}/thumb.png);">
+            <div class="thumb-unit" data-folder="{{project.folder}}" style="background-image: url({{ site.baseurl }}/assets/img/work/{{project.folder}}/thumb.png);">
 
                 <!-- this is the box that pops up over the album artwork -->
                 <div class="thumb-overlay">
