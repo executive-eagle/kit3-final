@@ -107,7 +107,7 @@ clients:
 - {avatar: 'lynda.jpg',
   name: 'Lynda C.',
   title: 'Director of Awesomeness',
-  quote: '<p>Too good. Too Good. <strong>Too good!</strong></p>',
+  quote: '<p>Too good. Too Good. <strong>Too good!</strong> It doesn't matter what it is. Avel will know how to woo the people around him.</p>',
   logo: 'lynda-logo.png'}
 
 - {avatar: 'trish.jpg',
