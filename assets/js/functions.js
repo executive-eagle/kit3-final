@@ -1,7 +1,7 @@
 $(function() {
     // we declare our functions up here
-    smoothScroll(400);
-    workBelt();
+  smoothScroll(400);
+  workBelt();
 	workLoad();
 	clientStuff();
 
@@ -92,7 +92,7 @@ function workLoad(){
 			newFolder = $this.data('folder'),
 			spinner = '<div class="loader">Loading...</div>',
 			newHTML = 'work/' + newFolder + '.html';
-      // above you have to delete the / from '/work/' for a relative path  
+      // above you have to delete the / from '/work/' for a relative path
 
 		$('.project-load').html(spinner).load(newHTML);
 
