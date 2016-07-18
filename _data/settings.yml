@@ -102,6 +102,12 @@ clients:
   title: 'Musician // Artist',
   quote: '<p>The vibes are <strong>real</strong> with this dude. He will make sure the process of creating a project is as angelic as the experience of listening to it is.</p>',
   logo: 'jb-logo.png'}
+
+- {avatar: 'lynda.jpg',
+  name: 'Lynda C.',
+  title: 'Director of Awesomeness',
+  quote: '<p>this</p>',
+  logo: 'lynda-logo.png'}
 #- {avatar: 'lynda.jpg',
 #  name: 'Lynda C.',
 #  title: 'Director of Awesomeness',
