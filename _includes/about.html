@@ -1,30 +1,30 @@
 <section>
     <h3 id="about">About</h3>
-    
+
     <div class="face-lockup">
-    
+
         <!-- Refer to the _data/portfolio.yml to change the image -->
         <div class="face-img"></div>
-    
+
         <div class="icon-note">{% include icons/icon-note.html %}</div>
         <div class="icon-guitar">{% include icons/icon-guitar.html %}</div>
         <div class="icon-mic">{% include icons/icon-mic.html %}</div>
         <div class="icon-video">{% include icons/icon-video.html %}</div>
-        
+
     </div>
-    
+
     <!-- Refer to the _data/settings.yml to change the blurb in the about section -->
 	<!-- the 'markdownify' makes it easier to write in the about me blurb in the settings -->
 	<!-- more user friendly -->
     <div class="blurb">{{ site.data.settings.blurb | markdownify }}</div>
-    
+
     <div class="skill-lockup">
-    
+
         <!-- this is a for-loop using the templating language called liquid -->
-        
+
         <!-- for each skill and value that we define in the _data/settings.yml file (in the 'skills:' list) it will output in this loop -->
         {% for skill in site.data.settings.skills %}
-        
+
         <div class="skill-unit">
             <div class="skill-label">{{ skill.name }}</div>
             <div class="skill-icons skill-{{ skill.value }}">
@@ -34,10 +34,10 @@
 				{% endfor %}
             </div>
         </div>
-        
+
         {% endfor %}
-        
+
     </div>
-    
-    
+
+
 </section>

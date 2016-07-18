@@ -1,4 +1,4 @@
-// our section with the artist face and skill icons    
+// our section with the artist face and skill icons
 .face-lockup
 	max-width: 780px
 	// we turn this section into a flexbox
@@ -12,24 +12,24 @@
 
 
 	// we are using an inline sass variable
-	// we have to use the #{} to make it inline 
+	// we have to use the #{} to make it inline
 	// refer to _data/portfolio.yml to change it
 	.face-img
 		border-radius: 50%
 		background-size: cover
 		background-position: center
-		background-image: url(/assets/img/#{ $avatar-path })
+		background-image: url({{ site.baseurl }}/assets/img/#{ $avatar-path })
 		+size(200px)
 		// bourbon mix-in
 		+order(3)
-      
+
 	// this selector allows us to add attributes to any class with the characters "icon-" in them
 	[class^="icon-"]
 		// makes all of them the size 100px
 		+size(100px)
 		background: $bg-color
 		// this is how we round out an image
-		border-radius: 50% 
+		border-radius: 50%
 
 		// this determines the color of our icons
 		path
@@ -132,17 +132,6 @@
 	.skill-lockup
 		width: 270px
 
-// refer to line 128        
+// refer to line 128
 %skill-color
 	background: $bg-color
-
-
-
-
-
-
-
-
-
-
-
