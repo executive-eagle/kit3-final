@@ -2,6 +2,8 @@
 markdown: kramdown
 permalink: pretty
 
+#port: 3000
+
 url: "https://executive-eagle.github.io" # the base hostname & protocol for your site
 baseurl: "/kit3-final"
 
