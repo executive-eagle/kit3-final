@@ -37,11 +37,11 @@ avatar: 'adface.png'
 
 # Artist Bio
 # refer to about.html
-blurb: | 
-  **Avel Delano (uh-vel de-lawn-o) is on this planet to create music.** His soul consists of gastric Jupiter rhythms that will make your heart beat on a higher wavelength. His expertise reaches all genres of music and sounds that the universe harbors. 
-  
+blurb: |
+  **Avel Delano (uh-vel de-lawn-o) is on this planet to create music.** His soul consists of gastric Jupiter rhythms that will make your heart beat on a higher wavelength. His expertise reaches all genres of music and sounds that the universe harbors.
+
   Need a hook or catchy-ass melody? Avel's acoustic palette will provide you with an epic experience.
-  
+
   Check out his latest [expedition](https://soundcloud.com/avel-avel-avel).
 
 
@@ -93,9 +93,9 @@ projects:
 
 clients:
 - {avatar: 'ray.jpg', name: 'Raymond C.', title: 'Director of M0nee-cache Record$', quote: '<p><strong>$MONEY $MONEY $MONEY $MONEY $MONEY $MONEY $MONEY $MONEY $MONEY $MONEY$$$$%$%$$$^...</strong>this guy will make you monies and chill vibes. Get at me! WHAT?! NONE OF THAT. NONE OF -- Oh yeah, he sings well too.</p>', logo: 'ray-logo.png' }
-- {avatar: 'jb.jpg', name: 'Ferris', title: 'Musician // Artist', quote: 'asksadl;kfjsad flasdjfjsckf s; fsad cg g fs g fs  vsa  sa g asf  asf g fs', logo: 'jb-logo.png'}
-- {avatar: 'lynda.jpg', name: 'Lynda C.', title: 'Director of Awesomeness', quote: 's g sfgs g safg sf g f g ds f sd f s g f g fg sa g sf f sdf da sf', logo: 'lynda-logo.png' }
-- {avatar: 'trish.jpg', name: 'Trish Hautea', title: 'CEO and Founder of Trish', quote: 's fg f gs df  s gf gsd sfsadjhslkjew  w  w thg w  tr   g fdg  fg s fg fs g', logo: 'trish-logo.png' }
+- {avatar: 'jb.jpg', name: 'Ferris', title: 'Musician // Artist', quote: 'The vibes are <strong>real</strong> with this dude. He will make sure the process of creating a project is as angelic as the experience of listening to it is.', logo: 'jb-logo.png'}
+- {avatar: 'lynda.jpg', name: 'Lynda C.', title: 'Director of Awesomeness', quote: 'I couldn't stop dancing. Give Avel a kingdom for providing us with infinite wisdom on melodies and music theory.', logo: 'lynda-logo.png' }
+- {avatar: 'trish.jpg', name: 'Trish Hautea', title: 'CEO and Founder of Trish', quote: 'He shared his sandwich with me while I was waiting with my group to do a session and I could not stop laughing. Avel has some super creative insight on how to come up with the best lyrics for almost every occasion. Waddup my glip-glops!', logo: 'trish-logo.png' }
 
 
 
@@ -117,40 +117,12 @@ seo:
 #---------------------------------
 # CONTACT SECTION
 
-# refer to assets/css/5-sections/contact 
+# refer to assets/css/5-sections/contact
 # you can choose: 'twitter' / 'facebook' / 'pinterest' / 'google-plus' / 'linkedin' / 'youtube' / 'instagram' / 'dribble' / 'behance' / 'soundcloud' / 'vine'
 
-social: 
+social:
 - {icon: 'soundcloud', link: 'https://soundcloud.com/avel-avel-avel'}
 - {icon: 'instagram', link: 'https://www.instagram.com/avelvision/'}
 - {icon: 'youtube', link: 'https://www.youtube.com/watch?v=e5mMH_iPRHE'}
 - {icon: 'linkedin', link: 'https://www.linkedin.com/in/adolfo-cortijo-8a2a9091?authType=NAME_SEARCH&authToken=-MUi&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A328148474%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1468438190465%2Ctas%3Aadolfo%20cortij'}
 - {icon: 'facebook', link: 'https://www.facebook.com/avel.avel.avel.avel?fref=ts'}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
