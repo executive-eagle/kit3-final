@@ -8,29 +8,29 @@ header
 	background:
 		position: 30px 20px, 50% 50%
 		// refer to assets/css/main.sass for the path
-		image: url(/assets/img/#{ $logo-path }), url(/assets/img/#{ $bgimg-path })
+		image: url(assets/img/#{ $logo-path }), url({{ site.baseurl }}/assets/img/#{ $bgimg-path })
 	padding-bottom: 60px
-	
+
 	.logo
 		+size(50px)
 		float: left
 		margin: 10px 0 0 30px
 
-	// navigation bar on the top-right    
+	// navigation bar on the top-right
 	nav
 		float: right
 		padding: 10px 30px 0 0
-		
+
 		a
 			display: inline-block
 			// gives the nav elements some margin on their left side
 			margin: 20px
 			color: rgba(255,255,255,1)
-			
+
 			// refer to assets/css/2-base/placeholders to edit
 			@extend %small-bold
 			// This '&' symbol refers to all of the selectors that came before
-			
+
 			&:hover
 				color: rgba(255,0,0,0.4)
 
@@ -40,8 +40,8 @@ header
 		font:
 			family: Open Sans
 			size: 72px
-			weight: 700   
-		color: rgba(255,255,255,1)    
+			weight: 700
+		color: rgba(255,255,255,1)
 		text-transform: uppercase
 		letter-spacing: 0.02em
 		margin-bottom: 20px
